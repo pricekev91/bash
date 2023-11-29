@@ -1,3 +1,3 @@
 #!/bin/bash
 snap install btop
-snap install git
+apt-get install git
