@@ -18,6 +18,3 @@ read token
 
 # Run the agent
 ./tfc-agent -token=$token
-
-# Run the agent
-./tfc-agent -token=UVxs48cCwnpoRg.atlasv1.bAiDcj4Vx947Aq2TCw4F1IgFyz6uxOwslayVGw9GJa8eYYwuoVBAxWTg3PWMLt1Rlek
