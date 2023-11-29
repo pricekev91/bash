@@ -6,11 +6,11 @@ version="1.14.1"
 # Download the agent
 wget https://releases.hashicorp.com/tfc-agent/${version}/tfc-agent_${version}_linux_amd64.zip
 
-# Unzip the agent
-unzip tfc-agent_${version}_linux_amd64.zip
+# Unzip the agent to /usr/bin
+unzip tfc-agent_${version}_linux_amd64.zip -d /usr/bin
 
 # Set the execute permission
-chmod +x tfc-agent
+chmod +x /usr/bin/tfc-agent
 
 # Ask for the token
 echo "Please enter your Terraform token:"
@@ -26,7 +26,7 @@ Description=Terraform Cloud Agent
 After=network.target
 
 [Service]
-ExecStart=/path/to/tfc-agent -token=\$token
+ExecStart=/usr/bin/tfc-agent -token=\$token
 
 [Install]
 WantedBy=multi-user.target
