@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the version
-version="0.0.1"
+version="1.14.1"
 
 # Download the agent
 wget https://releases.hashicorp.com/tfc-agent/${version}/tfc-agent_${version}_linux_amd64.zip
