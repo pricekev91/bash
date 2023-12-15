@@ -16,6 +16,9 @@ chmod +x /usr/bin/tfc-agent
 echo "Please enter your Terraform token:"
 read token
 
+# Get the hostname
+hostname=$(hostname)
+
 # Define the file path
 FILE="/etc/systemd/system/tfc-agent.service"
 
@@ -26,7 +29,9 @@ Description=Terraform Cloud Agent
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/tfc-agent -token=$token
+ExecStartPre=/bin/sleep 120
+ExecStart=/usr/bin/tfc-agent -token=$token -name=$hostname
+TimeoutStartSec=180
 
 [Install]
 WantedBy=multi-user.target
