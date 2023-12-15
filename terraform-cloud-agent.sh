@@ -4,10 +4,10 @@
 version="1.14.1"
 
 # Download the agent
-wget https://releases.hashicorp.com/tfc-agent/${version}/tfc-agent_${version}_linux_amd64.zip
+wget -O tfc-agent_${version}_linux_amd64.zip https://releases.hashicorp.com/tfc-agent/${version}/tfc-agent_${version}_linux_amd64.zip
 
 # Unzip the agent to /usr/bin
-unzip tfc-agent_${version}_linux_amd64.zip -d /usr/bin
+unzip -o tfc-agent_${version}_linux_amd64.zip -d /usr/bin
 
 # Set the execute permission
 chmod +x /usr/bin/tfc-agent
