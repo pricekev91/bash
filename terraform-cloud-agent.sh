@@ -20,17 +20,18 @@ read token
 FILE="/etc/systemd/system/tfc-agent.service"
 
 # Use sudo to create the file and write the content
-sudo bash -c "cat > $FILE" << EOF
+sudo bash -c "cat > $FILE" <<EOF
 [Unit]
 Description=Terraform Cloud Agent
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/tfc-agent -token=\$token
+ExecStart=/usr/bin/tfc-agent -token=$token
 
 [Install]
 WantedBy=multi-user.target
 EOF
+
 # Enable the service to start on boot
 sudo systemctl enable tfc-agent
 
