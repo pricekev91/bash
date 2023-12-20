@@ -16,8 +16,12 @@ chmod +x /usr/bin/tfc-agent
 echo "Please enter your Terraform token:"
 read token
 
-# Get the hostname
+# Get the hostname and current date in YYYY-MM-DD format
 hostname=$(hostname)
+date_str=$(date +%Y-%M-%d)
+
+# Create a combined name with the hostname and date
+combined_name="${hostname}-${date_str}"
 
 # Define the file path
 FILE="/etc/systemd/system/tfc-agent.service"
@@ -30,8 +34,9 @@ After=network.target
 
 [Service]
 ExecStartPre=/bin/sleep 120
-ExecStart=/usr/bin/tfc-agent -token=$token -name=$hostname
+ExecStart=/usr/bin/tfc-agent -token=$token -name=$combined_name
 TimeoutStartSec=180
+EOF
 
 [Install]
 WantedBy=multi-user.target
