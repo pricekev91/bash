@@ -11,7 +11,7 @@ sudo apt install apt-transport-https ca-certificates curl software-properties-co
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt update
-sudo apt install docker-ce -Y
+sudo apt install docker-ce
 read -n 1 -s -r -p $'\e[5mDocker installed. Press any key to continue\e[0m'
 clear
 
