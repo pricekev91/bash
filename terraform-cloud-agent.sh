@@ -36,7 +36,6 @@ After=network.target
 ExecStartPre=/bin/sleep 120
 ExecStart=/usr/bin/tfc-agent -token=$token -name=$combined_name
 TimeoutStartSec=180
-EOF
 
 [Install]
 WantedBy=multi-user.target
